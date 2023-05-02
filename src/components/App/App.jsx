@@ -3,6 +3,7 @@ import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
 import { Statictics } from 'components/Statistics/Statistics';
 import { Section } from 'components/Section/Section';
 import { Notification } from 'components/Notification/Notification';
+import { Wrapper } from './App.styled';
 
 export class App extends React.Component {
   state = {
@@ -28,7 +29,7 @@ export class App extends React.Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <>
+      <Wrapper>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -48,7 +49,7 @@ export class App extends React.Component {
             />
           )}
         </Section>
-      </>
+      </Wrapper>
     );
   }
 }

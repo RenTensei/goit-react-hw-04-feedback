@@ -1,6 +1,6 @@
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <>
+    <div>
       {options.map(option => (
         <button
           key={option}
@@ -11,6 +11,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           {option.charAt(0).toUpperCase() + option.substr(1)}
         </button>
       ))}
-    </>
+    </div>
   );
 };
