@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'; // ES6
+
 export const Statictics = ({
   good,
   neutral,
@@ -31,4 +33,12 @@ export const Statictics = ({
       </li>
     </ul>
   );
+};
+
+Statictics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
