@@ -1,29 +1,23 @@
-import PropTypes from 'prop-types'; // ES6
+import PropTypes from 'prop-types';
 
-export const Statictics = ({
-  good,
-  neutral,
-  bad,
+export const Statistics = ({
+  feedback: { good, neutral, bad },
   total,
   positivePercentage,
 }) => {
   return (
     <ul>
       <li>
-        Good
-        <span>: {good}</span>
+        Good<span>: {good}</span>
       </li>
       <li>
-        Neutral
-        <span>: {neutral}</span>
+        Neutral<span>: {neutral}</span>
       </li>
       <li>
-        Bad
-        <span>: {bad}</span>
+        Bad<span>: {bad}</span>
       </li>
       <li>
-        Total
-        <span>: {total}</span>
+        Total<span>: {total}</span>
       </li>
       <li>
         Positive feedback
@@ -35,10 +29,12 @@ export const Statictics = ({
   );
 };
 
-Statictics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
+Statistics.propTypes = {
+  feedback: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }).isRequired,
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
